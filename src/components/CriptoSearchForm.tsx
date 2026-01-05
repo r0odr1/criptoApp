@@ -2,11 +2,12 @@ import { useCryptoStore } from "../store"
 import { currencies } from "../data"
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import type { Pair } from "../types"
-import { object } from "zod"
 import ErrorMensage from "./ErrorMensage"
 
 export default function CriptoSearchForm() {
   const cryptocurrencies = useCryptoStore((state) => state.cryptocurrencies)
+  const fetchData = useCryptoStore((state) => state.fetchData)
+
   const [pair, setPair] = useState<Pair>({
     currency: '',
     criptocurrency: ''
@@ -30,8 +31,7 @@ export default function CriptoSearchForm() {
     }
 
     setError('')
-
-    //Consultar la API
+    fetchData(pair)
   }
 
 
@@ -58,10 +58,10 @@ export default function CriptoSearchForm() {
       </div>
 
       <div className="field">
-        <label htmlFor="ciptocurrency">Criptomoneda:</label>
+        <label htmlFor="criptocurrency">Criptomoneda:</label>
         <select
-          name="ciptocurrency"
-          id="ciptocurrency"
+          name="criptocurrency"
+          id="criptocurrency"
           onChange={handleChange}
           value={pair.criptocurrency}
         >
