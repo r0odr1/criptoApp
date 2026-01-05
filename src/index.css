@@ -18,6 +18,14 @@ body {
   font-size: 2rem;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
 @media (max-width: 768px) {
   body {
     background-position: 57% center;
@@ -46,17 +54,17 @@ body {
 .content {
   margin-top: 5rem;
   padding: 6rem 2rem;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari */
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background-color: rgba(24, 35, 57, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  border-radius: 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 768px) {
   .content {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(24, 35, 57, 0.5);
     backdrop-filter: blur(10px);
   }
 }
@@ -70,11 +78,13 @@ body {
 }
 
 .form label {
-  color: var(--black);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
 }
 
 .form select {
-  background-color: #ECEBEB;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--black);
   border: none;
   padding: 1rem;
   border-radius: 1rem;
@@ -92,6 +102,7 @@ body {
   margin-top: 2rem;
   transition: background-color 300ms ease;
   border-radius: 1rem;
+  letter-spacing: 0.05em;
 }
 
 .form [type="submit"]:hover {
@@ -104,6 +115,8 @@ body {
 
 .result-wrapper h2 {
   text-align: center;
+  color: var(--white);
+  margin-bottom: 2rem;
 }
 
 .result {
@@ -120,9 +133,11 @@ body {
 .result p {
   margin: 0 0 1 rem;
   font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.85);
 
 }
 
 .result span {
   font-weight: 700;
+  color: var(--primary);
 }
