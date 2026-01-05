@@ -19,6 +19,7 @@ export const useCryptoStore = create<CryptoStore>()(devtools((set) => ({
   },
 
   fetchData: async (pair) => {
-    await fetchCurrencyCryptoPrice(pair)
+    const result = await fetchCurrencyCryptoPrice(pair)
+    console.log(result);
   }
 })))
