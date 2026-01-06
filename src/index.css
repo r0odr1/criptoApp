@@ -141,3 +141,14 @@ body::before {
   font-weight: 700;
   color: var(--primary);
 }
+
+.content-error {
+  background-color: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);;
+  color: #fecaca;
+  padding: 1.4rem 1.6rem;;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+}

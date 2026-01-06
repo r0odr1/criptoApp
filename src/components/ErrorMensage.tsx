@@ -2,7 +2,7 @@
 
 export default function ErrorMensage({children} : {children : React.ReactNode}) {
   return (
-    <div>
+    <div className="content-error">
       {children}
     </div>
   )
